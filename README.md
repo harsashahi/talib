@@ -1,0 +1,1 @@
+Advanced trading analysis system built with TA-Lib and Python. Includes 40+ technical indicators, candlestick pattern recognition, backtesting engine, trading signals, risk management, and automated portfolio analysis.
