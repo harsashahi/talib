@@ -10,7 +10,7 @@ print("ANALYZING YOUR STOCK CSV DATA WITH TA-LIB")
 print("\n STEP 1: Loading CSV Data")
 
 # Replace 'your_file.csv' with your actual filename
-df = pd.read_csv('livedata_daywiselivedata2024.csv')
+df = pd.read_csv('daywise_ordered.csv')
 
 print(f" Loaded {len(df)} rows of data")
 print(f"Columns: {list(df.columns)}")
@@ -232,7 +232,7 @@ print(df[['date', 'close', 'RSI', 'Signal']].tail(10).to_string(index=False))
 print("\n\n💾 STEP 12: Saving Analysis")
 
 # Save full analysis to new CSV
-output_file = 'stock_analysis_with_indicators.csv'
+output_file = 'stock_analysis_with_indicators_new.csv'
 df.to_csv(output_file, index=False)
 print(f"✅ Saved full analysis to: {output_file}")
 

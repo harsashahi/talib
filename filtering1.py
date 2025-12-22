@@ -7,7 +7,7 @@ import numpy as np
 print("FILTERING TO ESSENTIAL COLUMNS ONLY")
 
 # Load your complete analysis file
-df = pd.read_csv('stock_analysis_with_indicators.csv')  # Change to your actual filename
+df = pd.read_csv('stock_analysis_with_indicators_new.csv')  # Change to your actual filename
 
 print(f"\nOriginal columns: {len(df.columns)}")
 print(f"Original data: {len(df)} rows")
