@@ -18,7 +18,6 @@ print(f"\nFirst few rows:")
 print(df.head())
 
 # STEP 2: Data Preparation
-# -------------------------
 print("\n\n STEP 2: Preparing Data")
 
 # Convert date to datetime
@@ -67,28 +66,28 @@ print(f"200-day SMA: ${df['SMA_200'].iloc[-1]:.2f}")
 current_price = df['close'].iloc[-1]
 if pd.notna(df['SMA_20'].iloc[-1]) and pd.notna(df['SMA_50'].iloc[-1]):
     if current_price > df['SMA_20'].iloc[-1] > df['SMA_50'].iloc[-1]:
-        print("\n✅ STRONG UPTREND: Price > 20 SMA > 50 SMA")
+        print("\n STRONG UPTREND: Price > 20 SMA > 50 SMA")
     elif current_price < df['SMA_20'].iloc[-1] < df['SMA_50'].iloc[-1]:
-        print("\n❌ STRONG DOWNTREND: Price < 20 SMA < 50 SMA")
+        print("\n STRONG DOWNTREND: Price < 20 SMA < 50 SMA")
     else:
-        print("\n➡️  MIXED TREND: Consolidating")
+        print("\n MIXED TREND: Consolidating")
 
 # STEP 5: Add RSI (Momentum)
-print("\n\n💪 STEP 5: RSI - Momentum Indicator")
+print("\n\n STEP 5: RSI - Momentum Indicator")
 
 df['RSI'] = talib.RSI(df['close'].values, timeperiod=14)
 
 print(f"Current RSI: {df['RSI'].iloc[-1]:.2f}")
 
 if df['RSI'].iloc[-1] > 70:
-    print("⚠️  OVERBOUGHT (RSI > 70) - Potential sell signal")
+    print(" OVERBOUGHT (RSI > 70) - Potential sell signal")
 elif df['RSI'].iloc[-1] < 30:
-    print("✅ OVERSOLD (RSI < 30) - Potential buy signal")
+    print(" OVERSOLD (RSI < 30) - Potential buy signal")
 else:
-    print("➡️  NEUTRAL (RSI 30-70)")
+    print("  NEUTRAL (RSI 30-70)")
 
 # STEP 6: Add MACD
-print("\n\n🎯 STEP 6: MACD - Trend & Momentum")
+print("\n\n STEP 6: MACD - Trend & Momentum")
 
 df['MACD'], df['MACD_Signal'], df['MACD_Hist'] = talib.MACD(
     df['close'].values, 
@@ -102,12 +101,12 @@ print(f"Signal: {df['MACD_Signal'].iloc[-1]:.2f}")
 print(f"Histogram: {df['MACD_Hist'].iloc[-1]:.2f}")
 
 if df['MACD'].iloc[-1] > df['MACD_Signal'].iloc[-1]:
-    print("✅ BULLISH: MACD above signal line")
+    print(" BULLISH: MACD above signal line")
 else:
-    print("❌ BEARISH: MACD below signal line")
+    print(" BEARISH: MACD below signal line")
 
 # STEP 7: Add Bollinger Bands
-print("\n\n📊 STEP 7: Bollinger Bands - Volatility")
+print("\n\n STEP 7: Bollinger Bands - Volatility")
 
 df['BB_Upper'], df['BB_Middle'], df['BB_Lower'] = talib.BBANDS(
     df['close'].values, 
@@ -128,25 +127,25 @@ band_position = (df['close'].iloc[-1] - df['BB_Lower'].iloc[-1]) / \
 print(f"Band Position: {band_position:.1f}%")
 
 if df['close'].iloc[-1] > df['BB_Upper'].iloc[-1]:
-    print("⚠️  Price ABOVE upper band (Overbought)")
+    print("  Price ABOVE upper band (Overbought)")
 elif df['close'].iloc[-1] < df['BB_Lower'].iloc[-1]:
-    print("✅ Price BELOW lower band (Oversold)")
+    print(" Price BELOW lower band (Oversold)")
 else:
-    print("➡️  Price within bands")
+    print(" Price within bands")
 
 # STEP 8: Add ATR (Volatility)
-print("\n\n📉 STEP 8: ATR - Average True Range")
+print("\n\n STEP 8: ATR - Average True Range")
 
 df['ATR'] = talib.ATR(df['high'].values, df['low'].values, df['close'].values, timeperiod=14)
 
 print(f"ATR (14): ${df['ATR'].iloc[-1]:.2f}")
 print(f"ATR as % of price: {(df['ATR'].iloc[-1] / df['close'].iloc[-1] * 100):.2f}%")
-print("\n💡 Use ATR for:")
+print("\n Use ATR for:")
 print("  - Stop loss: Current price ± (2 × ATR)")
 print("  - Position sizing: Risk / ATR")
 
 # STEP 9: Add Volume Indicators
-print("\n\n📦 STEP 9: Volume Analysis")
+print("\n\n STEP 9: Volume Analysis")
 
 df['OBV'] = talib.OBV(df['close'].values, df['volume'].values.astype(float))
 df['AD'] = talib.AD(df['high'].values, df['low'].values, df['close'].values, df['volume'].values.astype(float))
@@ -157,12 +156,12 @@ print(f"Accumulation/Distribution: {df['AD'].iloc[-1]:,.0f}")
 # OBV trend
 obv_change = df['OBV'].iloc[-1] - df['OBV'].iloc[-10]
 if obv_change > 0:
-    print("✅ OBV Rising: Money flowing IN (bullish)")
+    print(" OBV Rising: Money flowing IN (bullish)")
 else:
-    print("❌ OBV Falling: Money flowing OUT (bearish)")
+    print(" OBV Falling: Money flowing OUT (bearish)")
 
 # STEP 10: Add Stochastic Oscillator
-print("\n\n🎲 STEP 10: Stochastic Oscillator")
+print("\n\n STEP 10: Stochastic Oscillator")
 
 df['Stoch_K'], df['Stoch_D'] = talib.STOCH(
     df['high'].values,
@@ -177,14 +176,14 @@ print(f"Stochastic %K: {df['Stoch_K'].iloc[-1]:.2f}")
 print(f"Stochastic %D: {df['Stoch_D'].iloc[-1]:.2f}")
 
 if df['Stoch_K'].iloc[-1] > 80:
-    print("⚠️  OVERBOUGHT (>80)")
+    print("  OVERBOUGHT (>80)")
 elif df['Stoch_K'].iloc[-1] < 20:
-    print("✅ OVERSOLD (<20)")
+    print(" OVERSOLD (<20)")
 else:
-    print("➡️  NEUTRAL")
+    print("  NEUTRAL")
 
 # STEP 11: Trading Signals
-print("\n\n🚦 STEP 11: Simple Trading Signals")
+print("\n\n STEP 11: Simple Trading Signals")
 
 def generate_signal(row):
     """Generate buy/sell/hold signal based on multiple indicators"""
@@ -229,19 +228,19 @@ print(f"\nLast 10 signals:")
 print(df[['date', 'close', 'RSI', 'Signal']].tail(10).to_string(index=False))
 
 # STEP 12: Save Results
-print("\n\n💾 STEP 12: Saving Analysis")
+print("\n\n STEP 12: Saving Analysis")
 
 # Save full analysis to new CSV
 output_file = 'stock_analysis_with_indicators_new2.csv'
 df.to_csv(output_file, index=False)
-print(f"✅ Saved full analysis to: {output_file}")
+print(f" Saved full analysis to: {output_file}")
 
 # Save just the summary
 summary_df = df[['date', 'symbol', 'close', 'SMA_20', 'SMA_50', 'RSI', 'MACD', 'Signal']].tail(30)
 summary_df.to_csv('stock_summary_last_30_days.csv', index=False)
 
 # STEP 13: Key Statistics Summary
-print("\n\n📋 STEP 13: Final Summary")
+print("\n\n STEP 13: Final Summary")
 
 print(f"""
 STOCK ANALYSIS SUMMARY
