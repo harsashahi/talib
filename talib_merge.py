@@ -13,14 +13,12 @@ TALIB_MAP = {
     "Dark Cloud Cover": "DARKCLOUDCOVER",
     "Hanging Man": "HANGINGMAN",
     "Two Crow": "TWOCROWS",
-
     "3 Black Crows": "3BLACKCROWS",
     "3 Inside": "3INSIDE",
     "3 Line Strike": "3LINESTRIKE",
     "3 Outside": "3OUTSIDE",
     "3 Stars In South": "3STARSINSOUTH",
     "3 White Soldiers": "3WHITESOLDIERS",
-
     "Abandoned Baby": "ABANDONEDBABY",
     "Advance Block": "ADVANCEBLOCK",
     "Belt Hold": "BELTHOLD",
@@ -28,67 +26,47 @@ TALIB_MAP = {
     "Closing Marubozu": "CLOSINGMARUBOZU",
     "Conceal Baby Swallow": "CONCEALBABYSWALL",
     "Counterattack": "COUNTERATTACK",
-
     "Doji": "DOJI",
     "Doji Star": "DOJISTAR",
     "Dragonfly Doji": "DRAGONFLYDOJI",
-
     "Engulfing": "ENGULFING",
-
     "Evening Doji Star": "EVENINGDOJISTAR",
     "Evening Star": "EVENINGSTAR",
-
     "Gap Side-by-side White": "GAPSIDESIDEWHITE",
-
     "Grave Stone Doji": "GRAVESTONEDOJI",
-
     "Hammer": "HAMMER",
     "Harami": "HARAMI",
     "Harami Cross": "HARAMICROSS",
     "High Wave": "HIGHWAVE",
-
     "Hikkake": "HIKKAKE",
     "Hikkake Modified": "HIKKAKEMOD",
-
     "Homing Pigeon": "HOMINGPIGEON",
     "Identical 3 Crows": "IDENTICAL3CROWS",
-
     "In Neck": "INNECK",
     "Inside": "INSIDE",
     "Inverted Hammer": "INVERTEDHAMMER",
-
     "Kicking": "KICKING",
     "Kicking By Length": "KICKINGBYLENGTH",
-
     "Ladder Bottom": "LADDERBOTTOM",
     "Long Legged Doji": "LONGLEGGEDDOJI",
     "Longline": "LONGLINE",
-
     "Marubozu": "MARUBOZU",
     "Matching Low": "MATCHINGLOW",
     "Mat Hold": "MATHOLD",
-
     "Morning Star": "MORNINGSTAR",
-
     "On Neck": "ONNECK",
     "Piercing": "PIERCING",
-
     "Rickshaw Man": "RICKSHAWMAN",
-
     "Rise Fall 3 Methods": "RISEFALL3METHODS",
     "Separating Lines": "SEPARATINGLINES",
-
     "Shooting Star": "SHOOTINGSTAR",
     "Shortline": "SHORTLINE",
     "Spinning Top": "SPINNINGTOP",
-
     "Stalled Pattern": "STALLEDPATTERN",
     "Stick Sandwich": "STICKSANDWICH",
-
     "Takuri": "TAKURI",
     "Tasuki Gap": "TASUKIGAP",
     "Thrusting": "THRUSTING",
-
     "Tri-star": "TRISTAR",
     "Unique 3 River": "UNIQUE3RIVER",
     "Upside Gap 2 Crows": "UPSIDEGAP2CROWS",
