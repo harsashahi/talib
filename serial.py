@@ -12,7 +12,7 @@ print("Detected columns:", df.columns.tolist())
 
 # date column
 if 'date' not in df.columns:
-    raise ValueError("❌ 'date' column not found")
+    raise ValueError(" 'date' column not found")
 
 df['date'] = pd.to_datetime(df['date'])
 
@@ -33,7 +33,7 @@ if order_col:
     print(f"Using order column: {order_col}")
     df = df.sort_values(['symbol', 'date', order_col])
 else:
-    print("⚠ No contract column found → using row order")
+    print(" No contract column found → using row order")
     df = df.sort_values(['symbol', 'date']).reset_index(drop=True)
 
 # SERIAL NUMBER PER SYMBOL
